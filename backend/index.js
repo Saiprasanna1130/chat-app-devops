@@ -11,6 +11,10 @@ const io = new Server(server, { cors: { origin: '*', methods: ['GET','POST'] } }
 
 connectToMongo();
 app.set("io", io);
+app.get("/", (req, res) => {
+  res.send("Backend is running 🚀");
+});
+
 
 app.use(express.json());
 app.use(cors());
